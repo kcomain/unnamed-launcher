@@ -1,0 +1,10 @@
+<RCC>
+  <qresource prefix="data">
+    <file>resources/translations.qm</file>
+    <file>resources/translations.ts</file>
+  </qresource>
+  <qresource prefix="images">
+    <file>resources/reimu.ico</file>
+    <file>resources/reimu.png</file>
+  </qresource>
+</RCC>
