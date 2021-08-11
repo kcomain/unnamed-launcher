@@ -6,7 +6,11 @@ from PySide6.QtCore import QFile, QTranslator
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtWidgets import QApplication
 
-from unnamed.resources import qInitResources
+try:
+    from unnamed.resources import qInitResources
+except ImportError:
+    print('unable to import resources file. is the file generated? (try running make compile-resource)')
+    sys.exit(1)
 
 
 def main():

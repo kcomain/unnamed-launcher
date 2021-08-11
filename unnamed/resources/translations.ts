@@ -16,7 +16,7 @@
     <message>
         <location filename="../ui/AboutDialog.ui" line="89"/>
         <source>Version placeholdertext</source>
-        <translation></translation>
+        <translation type="unfinished">Version placeholdertext</translation>
     </message>
     <message>
         <location filename="../ui/AboutDialog.ui" line="116"/>
@@ -62,7 +62,7 @@
     <message>
         <location filename="../ui/MainMenu.ui" line="54"/>
         <source>Danmaku/Shmups/Main games</source>
-        <translation type="unfinished"></translation>
+        <translation>弾幕</translation>
     </message>
     <message>
         <location filename="../ui/MainMenu.ui" line="60"/>
@@ -199,7 +199,7 @@
     <message>
         <location filename="../ui/MainMenu.ui" line="496"/>
         <source>Version placeholdertext</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Version placeholdertext</translation>
     </message>
     <message>
         <location filename="../ui/MainMenu.ui" line="509"/>

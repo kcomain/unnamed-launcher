@@ -139,3 +139,6 @@ cython_debug/
 
 # Editor configuration
 .idea/
+
+# Qt resources
+resources.py
