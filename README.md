@@ -33,6 +33,11 @@ an operating system with 64 bit support
 - Python 3.6+, 3.10-
 - Qt
 
+building windows exes?
+- all of the above
+- 
+
+
 # credits
 this project is possible with efforts from the following people:
 - [Widdiful](https://www.widdiful.co.uk) for the original launcher

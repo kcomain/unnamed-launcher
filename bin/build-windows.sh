@@ -8,7 +8,7 @@ set -e
 trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 # echo an error message before exiting
 # shellcheck disable=SC2154
-trap 'echo "\"${last_command}\" command filed with exit code $?."' EXIT
+trap 'echo "\"${last_command}\" command ended with exit code $?."' EXIT
 
 export WINEDEBUG=-all
 
@@ -35,11 +35,19 @@ printf "winebooting temp directory... "
 wine wineboot &>/dev/null
 echo "done"
 
+printf "removing previous build directory... "
+if [ -d build/unnamed-launcher ]; then
+    rm -fr build/unnamed-launcher
+    echo "done"
+else
+    echo "doesn't exist"
+fi
+
 printf "checking if requirements.txt exists... "
 if ! [ -f requirements.txt ]; then
     printf "no, generating... "
     # shellcheck disable=SC2094
-    poetry export --dev --no-hashes -f requirements.txt > requirements.txt
+    poetry export --dev --without-hashes -f requirements.txt > requirements.txt
     echo "done"
 else
     echo "yes"
@@ -55,12 +63,28 @@ printf "installing python... "
 wine temp/PythonInstaller.exe /passive Include_doc=0 InstallLauncherAllUsers=0 Include_tcltk=0 &>/dev/null
 echo "done"
 
-# Fails with mysterious charmap error, doesn't work on my machine so disabled.
-#printf "upgrading pip... "
-#wine py -m pip install --upgrade pip > /dev/null
+# Fails with mysterious charmap error, doesn't work on my machine so disabled. UPDATE: its probably some shit coding
+printf "upgrading pip... "
+wine py -m pip -q install --upgrade pip
+echo "done"
+
+# bad idea
+#printf "winetricks: installing windowscodecs... "
+#winetricks windowscodecs #> /dev/null
 #echo "done"
 
 printf "installing dependencies... "
-sleep 2
+wine py -m pip -q install --no-warn-script-location -r requirements.txt # > /dev/null
+echo "done"
+
+printf "building exe... "
+sleep 5
 echo ""
-wine py -m pip install --no-warn-script-location -r requirements.txt > /dev/null
+# this is so bad lmao
+wine "c:\\users\\$USER\\appdata\\local\\programs\\python\\python38\\Scripts\\pyinstaller" \
+    --distpath ./build/dist --noconfirm --log-level DEBUG unnamed-launcher.spec
+echo "done"
+
+printf "removing things... "
+rm requirements.txt
+echo "done"

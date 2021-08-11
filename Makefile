@@ -28,10 +28,10 @@ build-executable: all
 		--noupx \
 		--collect-all unnamed \
 		main.py
-		#--onedir \
-		#unnamed-launcher.spec
 
-	mkdir temp -p
+		@#--onedir
+		@#unnamed-launcher.spec
+
 	bash bin/build-windows.sh
 #	curl https://github.com/kcomain/docker-pyinstaller/raw/master/Dockerfile-py3-win64 -Lo temp/Dockerfile
 #	cd temp && docker build -t pyinstaller-windows .
