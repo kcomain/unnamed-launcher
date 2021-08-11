@@ -9,7 +9,9 @@ from PySide6.QtWidgets import QApplication
 try:
     from unnamed.resources import qInitResources
 except ImportError:
-    print('unable to import resources file. is the file generated? (try running make compile-resource)')
+    print(
+        "unable to import resources file. is the file generated? (try running make compile-resource)"
+    )
     sys.exit(1)
 
 

@@ -1,3 +1,5 @@
+PWD = $(shell pwd)
+
 all: dependencies compile-resource lint
 
 dependencies:
@@ -14,18 +16,26 @@ compile-resource:
 start:
 	python3 -m unnamed
 
-build-executable: dependencies compile-resource
-	pyinstaller \
+build-executable: all
+	pyinstaller  \
 		--distpath ./build/dist \
 		--log-level DEBUG \
+		--noconfirm \
+		--onefile \
 		--name unnamed-launcher \
 		--icon unnamed/resources/reimu.ico \
 		--noconsole \
-		--onedir \
 		--noupx \
-		--noconfirm \
 		--collect-all unnamed \
 		main.py
+		#--onedir \
+		#unnamed-launcher.spec
+
+	mkdir temp -p
+	bash bin/build-windows.sh
+#	curl https://github.com/kcomain/docker-pyinstaller/raw/master/Dockerfile-py3-win64 -Lo temp/Dockerfile
+#	cd temp && docker build -t pyinstaller-windows .
+#	docker run -v "$(PWD):/src/" pyinstaller-windows
 
 clean:
-	rm -vfr build unnamed/resources.py *.spec
+	rm -vfr build unnamed/resources.py temp dist requirements.txt || true
