@@ -23,12 +23,12 @@ build-executable: all
 		--noconfirm \
 		--onefile \
 		--name unnamed-launcher \
-		--icon unnamed/resources/reimu.ico \
 		--noconsole \
 		--noupx \
 		--collect-all unnamed \
 		main.py
 
+		-#-icon unnamed/resources/reimu.ico
 		@#--onedir
 		@#unnamed-launcher.spec
 
