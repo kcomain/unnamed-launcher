@@ -70,9 +70,13 @@ this project is possible with efforts from the following people:
 - [Widdiful](https://www.widdiful.co.uk) for the original launcher
 - [David-JonesDVN](https://github.com/David-JonesDVN) for the updated launcher 
 - [u/absolitud3](https://old.reddit.com/r/touhou/comments/3jxj3g/im_making_more_sprites/) for the icon
-- [zun/team shanghai alice](https://www16.big.or.jp/~zun/)
+- [zun/team shanghai alice](https://www16.big.or.jp/~zun/) for the amazing games
 
 disclaimer: this project is not endorsed or supported by the aforementioned entities, team shanghai alice and twilight
 frontier. 
 i own only the code for this app, if you're the author of any assets that i've used, and you don't want me to use it, 
 please [let me know](mailto:me@kcomain.dev)
+
+## todo
+- cut down the binary size
+  - how in miku's name does the linux pyinstaller'd binary get to 250 mb i do not understand
