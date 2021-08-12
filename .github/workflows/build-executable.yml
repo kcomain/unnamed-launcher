@@ -33,11 +33,11 @@ jobs:
         poetry install
     
     - name: Build (linux)
-      if: runner.os == Linux
+      if: ${{ runner.os == 'Linux' }}
       run: make all build-executable
       
     - name: Build (windows)
-      if: runner.os == Windows
+      if: ${{ runner.os == 'Windows' }}
       shell: cmd
       run: ./bin/build-windows.bat
     
