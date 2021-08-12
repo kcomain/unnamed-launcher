@@ -23,12 +23,12 @@ jobs:
       - name: Setup poetry
         uses: abatilo/actions-poetry@v2.0.0
 
+      - name: Install Qt (beta)
+        uses: jurplel/install-qt-action@v2.13.2
+
       - name: Install dependencies
         run: |
           poetry install
-
-      - name: Install Qt (beta)
-        uses: jurplel/install-qt-action@v2.13.2
 
       - name: Build (linux)
         if: ${{ runner.os == 'Linux' }}
