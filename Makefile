@@ -13,6 +13,9 @@ compile-resource:
 	pyside6-rcc unnamed/resources.qrc -o unnamed/resources.py
 	lupdate unnamed -ts unnamed/resources/translations.ts
 
+generate-requirements:
+	poetry export --dev --without-hashes -f requirements.txt > requirements.txt
+
 start:
 	python3 -m unnamed
 

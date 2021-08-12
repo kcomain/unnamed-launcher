@@ -1,0 +1,5 @@
+repos:
+  - repo: https://github.com/kcomain/hooks
+    rev: 2b6ed96
+    hooks:
+      - id: genreq

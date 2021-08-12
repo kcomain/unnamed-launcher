@@ -45,7 +45,6 @@ if ERRORLEVEL 1 (
     echo attempting installation anyways.
     goto pipfound
 ) else (
-    echo pip found
     goto pipfound
 )
 REM in hindsight i could've probably used %LOCALAPPDATA% but i cannot be bothered. windows sucks.
