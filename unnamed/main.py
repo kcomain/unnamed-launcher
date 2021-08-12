@@ -1,8 +1,7 @@
 import os
 import sys
-import time
 
-from PySide6.QtCore import QFile, QTranslator
+from PySide6.QtCore import QFile  # , QTranslator
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtWidgets import QApplication
 

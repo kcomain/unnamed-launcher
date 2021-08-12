@@ -1,3 +1,6 @@
+[![Build executables](https://github.com/kcomain/unnamed-launcher/actions/workflows/build-executable.yml/badge.svg)](https://github.com/kcomain/unnamed-launcher/actions/workflows/build-executable.yml)
+[![wakatime](https://wakatime.com/badge/github/kcomain/unnamed-launcher.svg)](https://wakatime.com/badge/github/kcomain/unnamed-launcher)
+<hr>
 # unnamed-launcher
 
 yet another 2hu launcher
@@ -18,25 +21,49 @@ git clone git@github.com:kcomain/unnamed-launcher
 2. install all the required stuff
 ```bash
 poetry install
+# or
+# you might want to get into a virtual env first:
+python -m venv venv
+source venv/bin/activate # linux
+.\venv\bin\activate.bat # windows
+
+pip install -r requirements.txt
 ```
 3. and then do
 ```bash
 python3 -m unnamed
 ```
 
-alternatively you can grab executables [here (not available yet)](https://github.com/kcomain/unnamed-launcher/releases)
+alternatively you can grab executables [here](https://github.com/kcomain/unnamed-launcher/actions/workflows/build-executable.yml)
 
 ## runtime requirements
 an operating system with 64 bit support
 
 ## build requirements
-- Python 3.6+, 3.10-
-- Qt
+_**Tip:** you only need to do these if you want to build an executable, which you probably don't need to._
+_Check out [this](https://github.com/kcomain/unnamed-launcher/actions/workflows/build-executable.yml) and [this](https://github.com/kcomain/unnamed-launcher/releases)_
+- Python >=3.6, <3.10
 
-building windows exes?
-- all of the above
-- 
+### how to build?
+- Linux users
+```bash
+# if you have gnu make
+make all build-executable
+```
 
+```bash
+# if you don't have gnu make
+# 1. install dependencies as shown in #how-to-run
+# 2. run the following
+pyside6-rcc unnamed/resources.qrc -o unnamed/resources.py
+pyinstaller --distpath ./build/dist --log-level WARN --noconfirm --onefile \
+    --name unnamed-launcher --noconsole --noupx --collect-data unnamed main.py
+```
+
+- Windows users
+```bat
+bin\build-windows.bat
+```
 
 # credits
 this project is possible with efforts from the following people:

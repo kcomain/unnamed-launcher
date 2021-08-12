@@ -11,7 +11,7 @@ lint:
 
 compile-resource:
 	pyside6-rcc unnamed/resources.qrc -o unnamed/resources.py
-	lupdate unnamed -ts unnamed/resources/translations.ts
+	lupdate unnamed -ts unnamed/resources/translations.ts || true
 
 generate-requirements:
 	poetry export --dev --without-hashes -f requirements.txt > requirements.txt
