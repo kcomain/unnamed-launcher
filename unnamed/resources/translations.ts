@@ -16,7 +16,7 @@
     <message>
         <location filename="../ui/AboutDialog.ui" line="89"/>
         <source>Version placeholdertext</source>
-        <translation type="unfinished">Version placeholdertext</translation>
+        <translation>Version placeholdertext</translation>
     </message>
     <message>
         <location filename="../ui/AboutDialog.ui" line="116"/>
@@ -57,7 +57,7 @@
     <message>
         <location filename="../ui/MainMenu.ui" line="48"/>
         <source>Official Games</source>
-        <translation type="unfinished"></translation>
+        <translation>公式ゲーム</translation>
     </message>
     <message>
         <location filename="../ui/MainMenu.ui" line="54"/>
@@ -91,7 +91,7 @@
     <message>
         <location filename="../ui/MainMenu.ui" line="115"/>
         <source>Fan/Custom Games</source>
-        <translation type="unfinished"></translation>
+        <translation>非公式/カスタムゲーム</translation>
     </message>
     <message>
         <location filename="../ui/MainMenu.ui" line="123"/>
@@ -102,7 +102,7 @@
         <location filename="../ui/MainMenu.ui" line="182"/>
         <location filename="../ui/MainMenu.ui" line="618"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>設定</translation>
     </message>
     <message>
         <location filename="../ui/MainMenu.ui" line="188"/>
@@ -112,7 +112,7 @@
     <message>
         <location filename="../ui/MainMenu.ui" line="191"/>
         <source>Launcher Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ランチャー設定</translation>
     </message>
     <message>
         <location filename="../ui/MainMenu.ui" line="197"/>
@@ -142,7 +142,7 @@
     <message>
         <location filename="../ui/MainMenu.ui" line="241"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>言語</translation>
     </message>
     <message>
         <location filename="../ui/MainMenu.ui" line="266"/>
@@ -199,7 +199,7 @@
     <message>
         <location filename="../ui/MainMenu.ui" line="496"/>
         <source>Version placeholdertext</source>
-        <translation type="unfinished">Version placeholdertext</translation>
+        <translation>Version placeholdertext</translation>
     </message>
     <message>
         <location filename="../ui/MainMenu.ui" line="509"/>
@@ -249,7 +249,7 @@
     <message>
         <location filename="../ui/MainMenu.ui" line="631"/>
         <source>About</source>
-        <translation type="unfinished">nihongo</translation>
+        <translation>ef</translation>
     </message>
 </context>
 </TS>

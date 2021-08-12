@@ -21,13 +21,15 @@ def main():
     qInitResources()
     print("initialized resources")
 
-    # load translations
-    translator = QTranslator()
-    if translator.load(":/data/resources/translations.qm"):
-        print("loaded translations")
-        app.installTranslator(translator)
-    else:
-        print(f"unable to load translations. is the resource file compiled?")
+    # load translations (should be done when user changes language or if set language is not en_US,
+    # not on startup - i think)
+
+    # translator = QTranslator()
+    # if translator.load(":/data/resources/translations.qm"):
+    #     print("loaded translations")
+    #     app.installTranslator(translator)
+    # else:
+    #     print(f"unable to load translations. is the resource file compiled or is the qm file empty?")
 
     # load the main window
     loader = QUiLoader()

@@ -1,11 +1,8 @@
 # -*- mode: python ; coding: utf-8 -*-
-from PyInstaller.utils.hooks import collect_all
+from PyInstaller.utils.hooks import collect_data_files
 
 datas = []
-binaries = []
-hiddenimports = []
-tmp_ret = collect_all('unnamed')
-datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
+datas += collect_data_files('unnamed')
 
 
 block_cipher = None
@@ -13,9 +10,9 @@ block_cipher = None
 
 a = Analysis(['main.py'],
              pathex=['/home/sophie/PycharmProjects/unnamed-launcher'],
-             binaries=binaries,
+             binaries=[],
              datas=datas,
-             hiddenimports=hiddenimports,
+             hiddenimports=[],
              hookspath=[],
              hooksconfig={},
              runtime_hooks=[],
@@ -44,4 +41,4 @@ exe = EXE(pyz,
           disable_windowed_traceback=False,
           target_arch=None,
           codesign_identity=None,
-          entitlements_file=None , icon='unnamed/resources/reimu.ico')
+          entitlements_file=None )

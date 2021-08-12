@@ -6,8 +6,8 @@ dependencies:
 	poetry install
 
 lint:
-	isort .
-	black .
+	isort unnamed
+	black unnamed
 
 compile-resource:
 	pyside6-rcc unnamed/resources.qrc -o unnamed/resources.py
@@ -19,20 +19,21 @@ start:
 build-executable: all
 	pyinstaller  \
 		--distpath ./build/dist \
-		--log-level DEBUG \
+		--log-level WARN \
 		--noconfirm \
 		--onefile \
 		--name unnamed-launcher \
 		--noconsole \
 		--noupx \
-		--collect-all unnamed \
+		--collect-data unnamed \
 		main.py
 
-		-#-icon unnamed/resources/reimu.ico
+		@#--collect-binaries unnamed
+		@#--icon unnamed/resources/reimu.ico
 		@#--onedir
 		@#unnamed-launcher.spec
 
-	bash bin/build-windows.sh
+	@#bash bin/build-windows.sh
 #	curl https://github.com/kcomain/docker-pyinstaller/raw/master/Dockerfile-py3-win64 -Lo temp/Dockerfile
 #	cd temp && docker build -t pyinstaller-windows .
 #	docker run -v "$(PWD):/src/" pyinstaller-windows
