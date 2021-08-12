@@ -45,9 +45,9 @@ jobs:
       if: ${{ runner.os == 'Windows' }}
       shell: cmd
       run: |
-        ./bin/build-windows.bat
         cat %GITHUB_ENV%
         echo ARTIFACT_PATH=unnamed-launcher.exe >> %GITHUB_ENV%
+        ./bin/build-windows.bat
     
     - name: Upload built binaries
       uses: actions/upload-artifact@v2.2.4
