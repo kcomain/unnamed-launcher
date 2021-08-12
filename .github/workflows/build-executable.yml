@@ -94,5 +94,4 @@ jobs:
             artifacts/unnamed-launcher.exe/unnamed-launcher.exe
           name: ${{ env.RELEASE_NAME }}
           tag_name: ${{ env.RELEASE_TAG }}
-          prerelease: true
           body_path: .github/release.md
