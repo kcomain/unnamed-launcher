@@ -34,7 +34,7 @@ jobs:
     
     - name: Build (linux)
       if: ${{ runner.os == 'Linux' }}
-      run: make all build-executable
+      run: poetry run make all build-executable
       
     - name: Build (windows)
       if: ${{ runner.os == 'Windows' }}
