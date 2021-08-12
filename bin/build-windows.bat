@@ -76,7 +76,7 @@ cmd /c poetry run pyinstaller ^
 	--collect-binaries unnamed ^
 	main.py
 
-if ERRORLEVEL neq 0 (
+if %ERRORLEVEL% neq 0 (
     echo building failed for some reason.
     pause
     exit 1
@@ -90,7 +90,7 @@ echo executing pip-specific instructions
 
 echo creating a virtual environment
 python -m venv venv --upgrade-deps 2>nul
-if ERRORLEVEL neq 0 (
+if %ERRORLEVEL% neq 0 (
     REM 3.9 lower?
     python -m venv venv
     venv\scripts\pip install -U pip 2>nul
@@ -118,6 +118,12 @@ venv\scripts\pyinstaller ^
 	--collect-data unnamed ^
 	--collect-binaries unnamed ^
 	main.py
+
+if %ERRORLEVEL% neq 0 (
+    echo building failed for some reason.
+    pause
+    exit 1
+)
 
 goto done
 
