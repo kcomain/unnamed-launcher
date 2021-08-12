@@ -31,6 +31,9 @@ jobs:
     - name: Install dependencies
       run: |
         poetry install
+        
+    - name: Install Qt (beta)
+      uses: jurplel/install-qt-action@v2.13.2
     
     - name: Build (linux)
       if: ${{ runner.os == 'Linux' }}
@@ -43,6 +46,7 @@ jobs:
       shell: cmd
       run: |
         ./bin/build-windows.bat
+        cat %GITHUB_ENV%
         echo ARTIFACT_PATH=unnamed-launcher.exe >> %GITHUB_ENV%
     
     - name: Upload built binaries
