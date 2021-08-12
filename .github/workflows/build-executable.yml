@@ -34,16 +34,21 @@ jobs:
     
     - name: Build (linux)
       if: ${{ runner.os == 'Linux' }}
-      run: poetry run make all build-executable
+      run: |
+        poetry run make all build-executable
+        echo "ARTIFACT_PATH=unnamed-launcher" >> $GITHUB_ENV
       
     - name: Build (windows)
       if: ${{ runner.os == 'Windows' }}
       shell: cmd
-      run: ./bin/build-windows.bat
+      run: |
+        ./bin/build-windows.bat
+        echo ARTIFACT_PATH=unnamed-launcher.exe >> %GITHUB_ENV%
     
     - name: Upload built binaries
       uses: actions/upload-artifact@v2.2.4
       with: 
+        name: ${{ env.ARTIFACT_PATH }}
         path: build/dist/*
         retention-days: 90
 
