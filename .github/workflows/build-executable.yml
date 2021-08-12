@@ -16,15 +16,15 @@ jobs:
       - name: Check out
         uses: actions/checkout@v2
 
+      - name: Install Qt (beta)
+        uses: jurplel/install-qt-action@v2.13.2
+
       - name: Upgrade pip
         run: |
           python -m pip install --upgrade pip
 
       - name: Setup poetry
         uses: abatilo/actions-poetry@v2.0.0
-
-      - name: Install Qt (beta)
-        uses: jurplel/install-qt-action@v2.13.2
 
       - name: Install dependencies
         run: |
@@ -48,7 +48,7 @@ jobs:
         with:
           name: ${{ env.ARTIFACT_PATH }}
           path: build/dist/*
-          retention-days: 90
+          retention-days: 1
 
   #     - name: Lint with flake8
   #       run: |
@@ -70,21 +70,28 @@ jobs:
           python-version: 3.8
 
       - name: Download artifacts
+        id: download
         uses: actions/download-artifact@v2
+        with:
+          path: artifacts
+
+      - name: List artifact directory
+        run: |
+          ls artifacts
 
       - name: Set tag name
         run: |
           export PACKAGE_VERSION="v$(python -c 'from unnamed import VERSION;print(VERSION)')"
           export REVISION=$(git rev-parse --short HEAD)
           echo RELEASE_TAG=${PACKAGE_VERSION}+${REVISION} >> $GITHUB_ENV
-          echo RELEASE_NAME="v${PACKAGE_VERSION} build ${REVISION}" >> $GITHUB_ENV
+          echo RELEASE_NAME="${PACKAGE_VERSION} build ${REVISION}" >> $GITHUB_ENV
 
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            unnamed-launcher
-            unnamed-launcher.exe
+            artifacts/unnamed-launcher/unnamed-launcher
+            artifacts/unnamed-launcher.exe/unnamed-launcher.exe
           name: ${{ env.RELEASE_NAME }}
           tag_name: ${{ env.RELEASE_TAG }}
           prerelease: true

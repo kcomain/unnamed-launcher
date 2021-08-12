@@ -34,14 +34,14 @@ pip install -r requirements.txt
 python3 -m unnamed
 ```
 
-alternatively you can grab executables [here](https://github.com/kcomain/unnamed-launcher/actions/workflows/build-executable.yml)
+alternatively you can grab executables [here](https://github.com/kcomain/unnamed-launcher/releases)
 
 ## runtime requirements
 an operating system with 64 bit support
 
 ## build requirements
 _**Tip:** you only need to do these if you want to build an executable, which you probably don't need to._
-_Check out [this](https://github.com/kcomain/unnamed-launcher/actions/workflows/build-executable.yml) and [this](https://github.com/kcomain/unnamed-launcher/releases)_
+_Check out [this](https://github.com/kcomain/unnamed-launcher/releases)_
 - Python >=3.6, <3.10
 
 ### how to build?
