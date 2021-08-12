@@ -57,13 +57,13 @@ REM ============================================================================
 echo executing poetry specific instructions
 
 echo installing dependencies
-poetry install
+cmd /c poetry install
 
 echo generating required items
-poetry run pyside6-rcc unnamed/resources.qrc -o unnamed/resources.py
+cmd /c poetry run pyside6-rcc unnamed/resources.qrc -o unnamed/resources.py
 
 echo building executable
-poetry run pyinstaller ^
+cmd /c poetry run pyinstaller ^
     --distpath .\build\dist ^
     --log-level WARN ^
 	--noconfirm ^
@@ -78,6 +78,7 @@ poetry run pyinstaller ^
 
 if ERRORLEVEL neq 0 (
     echo building failed for some reason.
+    pause
     exit 1
 )
 
