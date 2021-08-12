@@ -57,7 +57,7 @@ REM ============================================================================
 echo executing poetry specific instructions
 
 echo installing dependencies
-cmd /c poetry install
+cmd /c poetry -q install
 
 echo generating required items
 cmd /c poetry run pyside6-rcc unnamed/resources.qrc -o unnamed/resources.py
