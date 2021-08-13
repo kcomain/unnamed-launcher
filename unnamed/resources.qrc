@@ -4,7 +4,6 @@
     <file>resources/translations.ts</file>
   </qresource>
   <qresource prefix="images">
-    <file>resources/test.png</file>
     <file>resources/reimu.ico</file>
     <file>resources/reimu.png</file>
   </qresource>
