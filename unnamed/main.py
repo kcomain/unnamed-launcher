@@ -5,6 +5,8 @@ from PySide6.QtCore import QFile  # , QTranslator
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtWidgets import QApplication
 
+from unnamed.events import init as events_init
+
 try:
     from unnamed.resources import qInitResources
 except ImportError:
@@ -40,6 +42,9 @@ def main():
         print(f"current location: {os.getcwd()}")
         sys.exit(1)
     main_window = loader.load(main_window_f)
+
+    # load events
+    events_init(app, main_window)
 
     main_window.show()
     app.exec()
