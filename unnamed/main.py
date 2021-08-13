@@ -9,9 +9,7 @@ from unnamed.helpers import load_ui
 try:
     from unnamed.resources import qInitResources
 except ImportError:
-    logging.critical(
-        "unable to import resources file. is the file generated? (try running make compile-resource)"
-    )
+    logging.critical("unable to import resources file. is the file generated? (try running make compile-resource)")
     sys.exit(1)
 
 
@@ -55,15 +53,9 @@ def main():
     try:
         app()
     except Exception:
-        logging.critical(
-            "If you're seeing this message, this means the application died for some reason."
-        )
-        logging.critical(
-            "There should be a stacktrace below this message that describes what went wrong."
-        )
-        logging.critical(
-            "If you can't see that message, you might have set the log level to critical or higher."
-        )
+        logging.critical("If you're seeing this message, this means the application died for some reason.")
+        logging.critical("There should be a stacktrace below this message that describes what went wrong.")
+        logging.critical("If you can't see that message, you might have set the log level to critical or higher.")
         logging.critical("Consider lowering it to learn why.")
         logging.exception("app() thrown an exception")
         logging.critical("unable to continue as app is in unknown state, exiting")

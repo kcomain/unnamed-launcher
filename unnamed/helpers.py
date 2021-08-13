@@ -1,6 +1,5 @@
 import logging
 import os
-from typing import Union
 
 from PySide6.QtCore import QFile
 from PySide6.QtUiTools import QUiLoader
