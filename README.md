@@ -1,6 +1,7 @@
 [![Build executables](https://github.com/kcomain/unnamed-launcher/actions/workflows/build-executable.yml/badge.svg)](https://github.com/kcomain/unnamed-launcher/actions/workflows/build-executable.yml)
 [![wakatime](https://wakatime.com/badge/github/kcomain/unnamed-launcher.svg)](https://wakatime.com/badge/github/kcomain/unnamed-launcher)
 <hr>
+
 # unnamed-launcher
 
 yet another 2hu launcher
@@ -78,5 +79,6 @@ i own only the code for this app, if you're the author of any assets that i've u
 please [let me know](mailto:me@kcomain.dev)
 
 ## todo
-- cut down the binary size
+- [hard] cut down the binary size
   - how in miku's name does the linux pyinstaller'd binary get to 250 mb i do not understand
+- button box wrapping thing (reimplement flowlayout)
