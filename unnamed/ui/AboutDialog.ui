@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>451</width>
-    <height>233</height>
+    <height>249</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -18,6 +18,10 @@
   </property>
   <property name="windowTitle">
    <string>About</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../resources.qrc">
+    <normaloff>:/images/resources/reimu.ico</normaloff>:/images/resources/reimu.ico</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="2" rowspan="2">
@@ -163,7 +167,6 @@
  </widget>
  <resources>
   <include location="../resources.qrc"/>
-  <include location="../../../../.designer/resources.qrc"/>
  </resources>
  <connections/>
 </ui>

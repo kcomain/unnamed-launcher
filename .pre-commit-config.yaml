@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/kcomain/hooks
-    rev: 82c8e6b
+    rev: ce39607a34254fb8bbfcfba9dfc88ba8b07671bd
     hooks:
       - id: genreq
       - id: formatting

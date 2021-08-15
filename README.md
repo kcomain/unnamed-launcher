@@ -4,6 +4,8 @@
 
 # unnamed-launcher
 
+note: this is a crappy ass project that no one should use
+
 yet another 2hu launcher
 
 design basically stolen from [widdiful's launcher](https://www.widdiful.co.uk/touhou.html) 
@@ -35,7 +37,7 @@ pip install -r requirements.txt
 python3 -m unnamed
 ```
 
-alternatively you can grab executables [here](https://github.com/kcomain/unnamed-launcher/releases)
+alternatively you can grab executables [here](https://github.com/kcomain/unnamed-launcher/releases/latest)
 
 ## runtime requirements
 an operating system with 64 bit support
@@ -72,6 +74,7 @@ this project is possible with efforts from the following people:
 - [David-JonesDVN](https://github.com/David-JonesDVN) for the updated launcher 
 - [u/absolitud3](https://old.reddit.com/r/touhou/comments/3jxj3g/im_making_more_sprites/) for the icon
 - [zun/team shanghai alice](https://www16.big.or.jp/~zun/) for the amazing games
+- [qt/pyside](https://www.qt.io)
 
 disclaimer: this project is not endorsed or supported by the aforementioned entities, team shanghai alice and twilight
 frontier. 
@@ -82,3 +85,4 @@ please [let me know](mailto:me@kcomain.dev)
 - [hard] cut down the binary size
   - how in miku's name does the linux pyinstaller'd binary get to 250 mb i do not understand
 - button box wrapping thing (reimplement flowlayout)
+- linux compatibility (wine, steam proton, etc.)

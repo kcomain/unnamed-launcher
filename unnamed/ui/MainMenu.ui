@@ -3,14 +3,11 @@
  <author>Sophie</author>
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
-  <property name="enabled">
-   <bool>true</bool>
-  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>927</width>
+    <width>800</width>
     <height>600</height>
    </rect>
   </property>
@@ -27,9 +24,6 @@
    <iconset resource="../resources.qrc">
     <normaloff>:/images/resources/reimu.ico</normaloff>:/images/resources/reimu.ico</iconset>
   </property>
-  <property name="tabShape">
-   <enum>QTabWidget::Rounded</enum>
-  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
@@ -37,85 +31,306 @@
       <property name="layoutDirection">
        <enum>Qt::LeftToRight</enum>
       </property>
-      <property name="tabShape">
-       <enum>QTabWidget::Rounded</enum>
+      <property name="tabPosition">
+       <enum>QTabWidget::North</enum>
       </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
+      <property name="movable">
+       <bool>true</bool>
+      </property>
       <widget class="QWidget" name="official_games_tab">
+       <property name="statusTip">
+        <string>Official games</string>
+       </property>
        <attribute name="title">
         <string>Official Games</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
          <widget class="QGroupBox" name="main_games">
+          <property name="statusTip">
+           <string>Main bullet hell games</string>
+          </property>
           <property name="title">
            <string>Danmaku/Shmups/Main games</string>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
-            <widget class="QPushButton" name="pushButton_5">
+            <widget class="QScrollArea" name="scrollArea">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+              <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>50</height>
-              </size>
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
              </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(114, 255, 166);</string>
+             <property name="widgetResizable">
+              <bool>true</bool>
              </property>
-             <property name="text">
-              <string>Touhou 1 - Highly responsive to prayers</string>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
-             <property name="icon">
-              <iconset resource="../resources.qrc">
-               <normaloff>:/images/resources/reimu.ico</normaloff>:/images/resources/reimu.ico</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>32</width>
-               <height>32</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushButton_6">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>50</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(114, 255, 166);</string>
-             </property>
-             <property name="text">
-              <string>Touhou 2 - Story of eastern wonderland</string>
-             </property>
-             <property name="icon">
-              <iconset resource="../resources.qrc">
-               <normaloff>:/images/resources/reimu.ico</normaloff>:/images/resources/reimu.ico</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>32</width>
-               <height>32</height>
-              </size>
-             </property>
+             <widget class="QWidget" name="scrollAreaWidgetContents">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>-89</y>
+                <width>722</width>
+                <height>404</height>
+               </rect>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_11">
+               <item>
+                <widget class="QPushButton" name="pushButton_5">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="statusTip">
+                  <string>Touhou 1 ~ Highly Responsive to Prayers</string>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(114, 255, 166);</string>
+                 </property>
+                 <property name="text">
+                  <string>HRtP</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../resources.qrc">
+                   <normaloff>:/images/resources/reimu.ico</normaloff>:/images/resources/reimu.ico</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>32</width>
+                   <height>32</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_8">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="statusTip">
+                  <string>Touhou 2 ~ Story of Eastern Wonderland</string>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(114, 255, 166);</string>
+                 </property>
+                 <property name="text">
+                  <string>SoEW</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../resources.qrc">
+                   <normaloff>:/images/resources/reimu.ico</normaloff>:/images/resources/reimu.ico</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>32</width>
+                   <height>32</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_9">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="statusTip">
+                  <string>Touhou ??? ~ ?????????</string>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(114, 255, 166);</string>
+                 </property>
+                 <property name="text">
+                  <string>Dummy</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../resources.qrc">
+                   <normaloff>:/images/resources/reimu.ico</normaloff>:/images/resources/reimu.ico</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>32</width>
+                   <height>32</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_12">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="statusTip">
+                  <string>Touhou ??? ~ ?????????</string>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(114, 255, 166);</string>
+                 </property>
+                 <property name="text">
+                  <string>Dummy</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../resources.qrc">
+                   <normaloff>:/images/resources/reimu.ico</normaloff>:/images/resources/reimu.ico</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>32</width>
+                   <height>32</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_11">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="statusTip">
+                  <string>Touhou ??? ~ ?????????</string>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(114, 255, 166);</string>
+                 </property>
+                 <property name="text">
+                  <string>I will</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../resources.qrc">
+                   <normaloff>:/images/resources/reimu.ico</normaloff>:/images/resources/reimu.ico</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>32</width>
+                   <height>32</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_10">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="statusTip">
+                  <string>Touhou ??? ~ ?????????</string>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(114, 255, 166);</string>
+                 </property>
+                 <property name="text">
+                  <string>Fix this</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../resources.qrc">
+                   <normaloff>:/images/resources/reimu.ico</normaloff>:/images/resources/reimu.ico</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>32</width>
+                   <height>32</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_6">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="statusTip">
+                  <string>Touhou ??? ~ ?????????</string>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(114, 255, 166);</string>
+                 </property>
+                 <property name="text">
+                  <string>Soon as in 3-5 business days</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../resources.qrc">
+                   <normaloff>:/images/resources/reimu.ico</normaloff>:/images/resources/reimu.ico</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>32</width>
+                   <height>32</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
             </widget>
            </item>
           </layout>
@@ -123,6 +338,9 @@
         </item>
         <item>
          <widget class="QGroupBox" name="fighting_games">
+          <property name="statusTip">
+           <string>Fighting spin-offs</string>
+          </property>
           <property name="title">
            <string>Fighting games</string>
           </property>
@@ -145,6 +363,9 @@
         </item>
         <item>
          <widget class="QGroupBox" name="other_games">
+          <property name="statusTip">
+           <string>Other games that doesn't fit into other categories</string>
+          </property>
           <property name="title">
            <string>Other games</string>
           </property>
@@ -173,97 +394,74 @@
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
-         <layout class="QGridLayout" name="gridLayout">
-          <item row="3" column="1">
-           <widget class="QLabel" name="reimo">
-            <property name="text">
-             <string>reimo</string>
-            </property>
-            <property name="textFormat">
-             <enum>Qt::MarkdownText</enum>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QPushButton" name="pushButton">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>Big add button</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="2" rowspan="4">
-           <widget class="QListView" name="listView">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="selectionMode">
-             <enum>QAbstractItemView::SingleSelection</enum>
-            </property>
-            <property name="movement">
-             <enum>QListView::Snap</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0" rowspan="4">
-           <widget class="QTreeWidget" name="treeWidget">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <column>
-             <property name="text">
-              <string notr="true">1</string>
-             </property>
-            </column>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QLabel" name="wip_label3">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;girl is now bashing head against wall. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;please wait warmly until this section is complete.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-            <property name="textFormat">
-             <enum>Qt::RichText</enum>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QPushButton" name="pushButton_2">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
+         <widget class="QTreeWidget" name="treeWidget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <column>
+           <property name="text">
+            <string notr="true">1</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_12">
+          <item>
+           <widget class="QPushButton" name="pushButton_4">
             <property name="text">
              <string>PushButton</string>
             </property>
            </widget>
           </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_13">
+            <property name="text">
+             <string>PushButton</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_7">
+            <property name="text">
+             <string>PushButton</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;girl is now bashing head against wall. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;please wait warmly until this section is done&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
          </layout>
+        </item>
+        <item>
+         <widget class="QListWidget" name="listWidget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -283,6 +481,9 @@
           <layout class="QVBoxLayout" name="verticalLayout_2">
            <item>
             <widget class="QGroupBox" name="general_settings">
+             <property name="statusTip">
+              <string>General launcher settings</string>
+             </property>
              <property name="title">
               <string>General</string>
              </property>
@@ -327,6 +528,9 @@
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <property name="statusTip">
+                   <string>Select a language</string>
+                  </property>
                   <property name="text">
                    <string>Language</string>
                   </property>
@@ -342,6 +546,9 @@
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
+                  </property>
+                  <property name="toolTip">
+                   <string>Select a language</string>
                   </property>
                   <property name="editable">
                    <bool>false</bool>
@@ -364,22 +571,104 @@
            </item>
            <item>
             <widget class="QGroupBox" name="location_setting">
+             <property name="statusTip">
+              <string>Set location for ThCrap, Neko Project, etc</string>
+             </property>
              <property name="title">
               <string>Locations</string>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_7">
               <item>
-               <spacer name="verticalSpacer_4">
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>20</width>
-                  <height>40</height>
-                 </size>
-                </property>
-               </spacer>
+               <layout class="QFormLayout" name="location_setting_layout">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="np2_exec_label">
+                  <property name="statusTip">
+                   <string>Optional. Neko Project 2 Executable location (np21nt.exe/np21.exe). You can't play PC-98 games without this</string>
+                  </property>
+                  <property name="text">
+                   <string>Neko Project II exe</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>np2_location_browse</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <layout class="QHBoxLayout" name="np2_location">
+                  <item>
+                   <widget class="QLineEdit" name="np2_location_text"/>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="np2_location_browse">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="cursor">
+                     <cursorShape>ClosedHandCursor</cursorShape>
+                    </property>
+                    <property name="statusTip">
+                     <string>Work in progress..</string>
+                    </property>
+                    <property name="text">
+                     <string>Browse...</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="label_2">
+                  <property name="statusTip">
+                   <string>Optional. thcrap (Touhou Community Reliant Automatic Patcher) location. Required for thcrap integration</string>
+                  </property>
+                  <property name="text">
+                   <string>thcrap folder</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>pushButton_3</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <layout class="QHBoxLayout" name="np2_exec_location_2">
+                  <item>
+                   <widget class="QLineEdit" name="lineEdit_2"/>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_3">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="cursor">
+                     <cursorShape>ClosedHandCursor</cursorShape>
+                    </property>
+                    <property name="statusTip">
+                     <string>Work in progress..</string>
+                    </property>
+                    <property name="text">
+                     <string>Browse...</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="2" column="0" colspan="2">
+                 <widget class="QPushButton" name="pushButton_2">
+                  <property name="statusTip">
+                   <string>Configure thcrap with thcrap_configure</string>
+                  </property>
+                  <property name="text">
+                   <string>Configure thcrap</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </item>
               <item>
                <spacer name="verticalSpacer">
@@ -429,8 +718,21 @@
              </property>
              <item>
               <widget class="QPushButton" name="random_all">
+               <property name="statusTip">
+                <string>Select all games to have a chance to be selected when using the random option</string>
+               </property>
                <property name="text">
                 <string>Select all</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton">
+               <property name="statusTip">
+                <string>Select all available games to have a chance to be selected when using the random option</string>
+               </property>
+               <property name="text">
+                <string>Select all available</string>
                </property>
               </widget>
              </item>
@@ -449,6 +751,9 @@
              </item>
              <item>
               <widget class="QPushButton" name="random_none">
+               <property name="statusTip">
+                <string>Disables the random game option</string>
+               </property>
                <property name="text">
                 <string>Unselect All</string>
                </property>
@@ -692,7 +997,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>927</width>
+     <width>800</width>
      <height>19</height>
     </rect>
    </property>
@@ -703,6 +1008,9 @@
     <addaction name="menu_quit"/>
    </widget>
    <widget class="QMenu" name="menu_help">
+    <property name="statusTip">
+     <string>Get help</string>
+    </property>
     <property name="title">
      <string>Help</string>
     </property>
@@ -721,6 +1029,9 @@
    <property name="text">
     <string>Quit</string>
    </property>
+   <property name="statusTip">
+    <string>Quit the launcher</string>
+   </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
    </property>
@@ -729,10 +1040,50 @@
    <property name="text">
     <string>About</string>
    </property>
+   <property name="statusTip">
+    <string>About this launcher</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::AboutRole</enum>
+   </property>
   </action>
  </widget>
  <resources>
   <include location="../resources.qrc"/>
+  <include location="../../../../.designer/resources.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>label_16</sender>
+   <signal>linkHovered(QString)</signal>
+   <receiver>statusbar</receiver>
+   <slot>showMessage(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>493</x>
+     <y>167</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>34</x>
+     <y>599</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>description_text</sender>
+   <signal>linkHovered(QString)</signal>
+   <receiver>statusbar</receiver>
+   <slot>showMessage(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>144</x>
+     <y>541</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>68</x>
+     <y>590</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
