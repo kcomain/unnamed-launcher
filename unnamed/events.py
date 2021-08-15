@@ -1,7 +1,7 @@
 from logging import getLogger
 from typing import Callable, Union
 
-from PySide6.QtWidgets import QApplication, QDialog, QWidget
+from PySide6.QtWidgets import QApplication, QDialog, QFileDialog, QWidget
 
 from .helpers import load_ui
 
@@ -37,9 +37,6 @@ class BaseEvents:
 
 
 class MenuEvents(BaseEvents):
-    def __init__(self, app: QApplication, window):
-        super().__init__(app, window)
-
     def event_menu_quit(self, logger):
         def action():
             logger.debug("quit action called")
@@ -58,5 +55,38 @@ class MenuEvents(BaseEvents):
         self.window.menu_about.triggered.connect(action)
 
 
+class SettingInputEvents(BaseEvents):
+    def event_np2_browse_click(self, logger):
+        def action():
+            logger.debug("browse np2 location button clicked")
+            logger.debug("attempting to show file dialog...")
+            file, _ = QFileDialog.getOpenFileName(self.window, filter="Executable files (*.exe)")
+            logger.debug(f"selected file: {file}")
+            if file == "":
+                logger.debug("file returned is empty, not setting line")
+            else:
+                logger.debug(f"setting text of LineEdit to {file}")
+                self.window.np2_location_text.setText(file)
+            logger.debug("WIP: saving location")
+
+        self.window.np2_location_browse.clicked.connect(action)
+
+    def event_thcrap_browse_click(self, logger):
+        def action():
+            logger.debug("browse thcrap location button clicked")
+            logger.debug("attempting to show file dialog...")
+            file, _ = QFileDialog.getOpenFileName(self.window)
+            logger.debug(f"selected file: {file}")
+            if file == "":
+                logger.debug("file returned is empty, not setting line")
+            else:
+                logger.debug(f"setting text of LineEdit to {file}")
+                self.window.thcrap_text.setText(file)
+            logger.debug("WIP: saving location")
+
+        self.window.thcrap_browse.clicked.connect(action)
+
+
 def init(app: QApplication, window):
     MenuEvents(app, window).init()
+    SettingInputEvents(app, window).init()

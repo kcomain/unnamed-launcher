@@ -78,7 +78,7 @@
               <property name="geometry">
                <rect>
                 <x>0</x>
-                <y>-89</y>
+                <y>0</y>
                 <width>722</width>
                 <height>404</height>
                </rect>
@@ -394,7 +394,7 @@
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
-         <widget class="QTreeWidget" name="treeWidget">
+         <widget class="QTreeWidget" name="custom_categories">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
             <horstretch>0</horstretch>
@@ -409,25 +409,18 @@
          </widget>
         </item>
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_12">
-          <item>
-           <widget class="QPushButton" name="pushButton_4">
-            <property name="text">
-             <string>PushButton</string>
-            </property>
-           </widget>
-          </item>
+         <layout class="QVBoxLayout" name="custom_buttons">
           <item>
            <widget class="QPushButton" name="pushButton_13">
             <property name="text">
-             <string>PushButton</string>
+             <string>Add a Category</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_7">
+           <widget class="QPushButton" name="pushButton_14">
             <property name="text">
-             <string>PushButton</string>
+             <string>Delete this Category</string>
             </property>
            </widget>
           </item>
@@ -445,7 +438,27 @@
            </spacer>
           </item>
           <item>
-           <widget class="QLabel" name="label">
+           <widget class="QPushButton" name="pushButton_4">
+            <property name="text">
+             <string>Add a Game</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="spacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="wip_label">
             <property name="text">
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;girl is now bashing head against wall. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;please wait warmly until this section is done&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
@@ -454,7 +467,7 @@
          </layout>
         </item>
         <item>
-         <widget class="QListWidget" name="listWidget">
+         <widget class="QListWidget" name="custom_category_list">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
             <horstretch>0</horstretch>
@@ -596,7 +609,11 @@
                 <item row="0" column="1">
                  <layout class="QHBoxLayout" name="np2_location">
                   <item>
-                   <widget class="QLineEdit" name="np2_location_text"/>
+                   <widget class="QLineEdit" name="np2_location_text">
+                    <property name="inputMask">
+                     <string/>
+                    </property>
+                   </widget>
                   </item>
                   <item>
                    <widget class="QPushButton" name="np2_location_browse">
@@ -620,7 +637,7 @@
                  </layout>
                 </item>
                 <item row="1" column="0">
-                 <widget class="QLabel" name="label_2">
+                 <widget class="QLabel" name="thcrap_exec_label">
                   <property name="statusTip">
                    <string>Optional. thcrap (Touhou Community Reliant Automatic Patcher) location. Required for thcrap integration</string>
                   </property>
@@ -628,17 +645,17 @@
                    <string>thcrap folder</string>
                   </property>
                   <property name="buddy">
-                   <cstring>pushButton_3</cstring>
+                   <cstring>thcrap_browse</cstring>
                   </property>
                  </widget>
                 </item>
                 <item row="1" column="1">
-                 <layout class="QHBoxLayout" name="np2_exec_location_2">
+                 <layout class="QHBoxLayout" name="thcrap_location">
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_2"/>
+                   <widget class="QLineEdit" name="thcrap_text"/>
                   </item>
                   <item>
-                   <widget class="QPushButton" name="pushButton_3">
+                   <widget class="QPushButton" name="thcrap_browse">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
                       <horstretch>0</horstretch>
@@ -659,7 +676,7 @@
                  </layout>
                 </item>
                 <item row="2" column="0" colspan="2">
-                 <widget class="QPushButton" name="pushButton_2">
+                 <widget class="QPushButton" name="thcrap_configure">
                   <property name="statusTip">
                    <string>Configure thcrap with thcrap_configure</string>
                   </property>
@@ -952,7 +969,7 @@
              <item>
               <widget class="QLabel" name="label_16">
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www16.big.or.jp/~zun/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Team Shanghai Alice/ZUN&lt;/span&gt;&lt;/a&gt; for the amazing games&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.widdiful.co.uk/touhou.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Widdiful&lt;/span&gt;&lt;/a&gt; and &lt;a href=&quot;https://github.com/David-JonesDVN/Touhou-Relauncher&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;David-JonesDVN&lt;/span&gt;&lt;/a&gt;: original touhou launchers that this project stole the design of&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.qt.io&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Qt&lt;/span&gt;&lt;/a&gt; and PySide6: makes this crappy app possible&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www16.big.or.jp/~zun/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Team Shanghai Alice/ZUN&lt;/span&gt;&lt;/a&gt; for the amazing games &lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.widdiful.co.uk/touhou.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Widdiful&lt;/span&gt;&lt;/a&gt; and &lt;a href=&quot;https://github.com/David-JonesDVN/Touhou-Relauncher&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;David-JonesDVN&lt;/span&gt;&lt;/a&gt;: original touhou launchers that this project stole the design of &lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.qt.io&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Qt&lt;/span&gt;&lt;/a&gt; and PySide6: makes this crappy app possible &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="textFormat">
                 <enum>Qt::RichText</enum>
@@ -1050,7 +1067,6 @@
  </widget>
  <resources>
   <include location="../resources.qrc"/>
-  <include location="../../../../.designer/resources.qrc"/>
  </resources>
  <connections>
   <connection>
