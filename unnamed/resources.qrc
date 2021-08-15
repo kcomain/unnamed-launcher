@@ -1,7 +1,6 @@
 <RCC>
   <qresource prefix="data">
-    <file>resources/translations.qm</file>
-    <file>resources/translations.ts</file>
+    <file>resources/translation.ja_JP.qm</file>
   </qresource>
   <qresource prefix="images">
     <file>resources/reimu.ico</file>
