@@ -15,4 +15,4 @@ class SemVer:
         return f"{self.numerical_string}-{self.release}"
 
 
-VERSION = SemVer(0, 1, 0, "alpha")
+VERSION = SemVer(0, 1, 1, "alpha")

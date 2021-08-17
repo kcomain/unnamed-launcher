@@ -418,13 +418,6 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_14">
-            <property name="text">
-             <string>Delete this Category</string>
-            </property>
-           </widget>
-          </item>
-          <item>
            <spacer name="verticalSpacer_4">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
@@ -685,7 +678,28 @@
                   </property>
                  </widget>
                 </item>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="thcrap_starting">
+                  <property name="text">
+                   <string>thcrap starting repo</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QLineEdit" name="thcrap_starting_text">
+                  <property name="text">
+                   <string>https://srv.thpatch.net/</string>
+                  </property>
+                 </widget>
+                </item>
                </layout>
+              </item>
+              <item>
+               <widget class="QPushButton" name="thcrap_test">
+                <property name="text">
+                 <string>Test thcrap (debug only)</string>
+                </property>
+               </widget>
               </item>
               <item>
                <spacer name="verticalSpacer">
@@ -1015,7 +1029,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>19</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_launcher">
@@ -1067,6 +1081,7 @@
  </widget>
  <resources>
   <include location="../resources.qrc"/>
+  <include location="../../../../.designer/resources.qrc"/>
  </resources>
  <connections>
   <connection>

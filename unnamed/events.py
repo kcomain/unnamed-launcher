@@ -1,9 +1,11 @@
 from logging import getLogger
 from typing import Callable, Union
 
+from PySide6.QtCore import QThread
 from PySide6.QtWidgets import QApplication, QDialog, QFileDialog, QWidget
 
 from .helpers import load_ui
+from .th_crap import test
 
 
 class BaseEvents:
@@ -87,6 +89,16 @@ class SettingInputEvents(BaseEvents):
         self.window.thcrap_browse.clicked.connect(action)
 
 
+class ThCrapTest(BaseEvents):
+    def event_thcrap_test(self, logger):
+        def action():
+            self.window.thcrap_test.setEnabled(False)
+            test(self.window, logger)
+
+        self.window.thcrap_test.clicked.connect(action)
+
+
 def init(app: QApplication, window):
     MenuEvents(app, window).init()
     SettingInputEvents(app, window).init()
+    ThCrapTest(app, window).init()

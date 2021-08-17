@@ -4,7 +4,7 @@
 
 # unnamed-launcher
 
-note: this is a crappy ass project that no one should use
+*note: ultra beta software, expect unstable ui and stuff*
 
 yet another 2hu launcher
 
@@ -71,10 +71,11 @@ bin\build-windows.bat
 # credits
 this project is possible with efforts from the following people:
 - [Widdiful](https://www.widdiful.co.uk) for the original launcher
-- [David-JonesDVN](https://github.com/David-JonesDVN) for the updated launcher 
+- [David-JonesDVN](https://github.com/David-JonesDVN) for the remade launcher 
 - [u/absolitud3](https://old.reddit.com/r/touhou/comments/3jxj3g/im_making_more_sprites/) for the icon
 - [zun/team shanghai alice](https://www16.big.or.jp/~zun/) for the amazing games
 - [qt/pyside](https://www.qt.io)
+- you
 
 disclaimer: this project is not endorsed or supported by the aforementioned entities, team shanghai alice and twilight
 frontier. 
