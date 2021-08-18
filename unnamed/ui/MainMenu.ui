@@ -695,13 +695,6 @@
                </layout>
               </item>
               <item>
-               <widget class="QPushButton" name="thcrap_test">
-                <property name="text">
-                 <string>Test thcrap (debug only)</string>
-                </property>
-               </widget>
-              </item>
-              <item>
                <spacer name="verticalSpacer">
                 <property name="orientation">
                  <enum>Qt::Vertical</enum>
@@ -713,6 +706,29 @@
                  </size>
                 </property>
                </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="thcrap_test">
+                <property name="text">
+                 <string>Test thcrap (debug only)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QProgressBar" name="funny">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="value">
+                 <number>0</number>
+                </property>
+                <property name="invertedAppearance">
+                 <bool>false</bool>
+                </property>
+                <property name="format">
+                 <string>Random progress bar</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -1029,7 +1045,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>23</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_launcher">

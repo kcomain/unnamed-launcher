@@ -1,7 +1,6 @@
 from logging import getLogger
 from typing import Callable, Union
 
-from PySide6.QtCore import QThread
 from PySide6.QtWidgets import QApplication, QDialog, QFileDialog, QWidget
 
 from .helpers import load_ui
@@ -93,7 +92,7 @@ class ThCrapTest(BaseEvents):
     def event_thcrap_test(self, logger):
         def action():
             self.window.thcrap_test.setEnabled(False)
-            test(self.window, logger)
+            self.window.test_thread = test(self.window, logger)
 
         self.window.thcrap_test.clicked.connect(action)
 

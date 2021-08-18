@@ -27,6 +27,7 @@ class Repository:
         # private
         "_synced",
         "_logger",
+        "_total",
     )
 
     def __init__(self, url):  # , repo_id=None):
@@ -38,29 +39,41 @@ class Repository:
         self.title = ""
 
         self._synced = []  # prevent recursive loops
+        self._total = 0
         self._logger = _logger.getChild("unnamed_repository")
 
-    def sync(self, neighbor_sync_depth: int = 0, cache: bool = True, _synced=None, _iter=0) -> int:
+    def sync(
+        self,
+        neighbor_sync_depth: int = 0,
+        cache: bool = True,
+        signal=None,
+        _self=None,
+        _iter=0,
+    ) -> int:
         """
         Sync repository
 
-        :param _synced: private
+        :param _self: private
         :param _iter: private
+        :param signal: pyqt/pyside signal
         :param neighbor_sync_depth: How deep to sync neighbors, 0 to disable, defaults to 0
         :param cache: Whether or not to cache results, defaults to yes
         :return: private
         """
-        self._logger.debug('synced: ' + str(_synced))
+        if not signal:
+            signal = type("DummySignal", (), {"emit": lambda _: None})
 
-        if not _synced:
-            _synced = self._synced  # should be a pointer/reference
+        if not _self:
+            _self = self
+
+        signal.emit(_iter, _self._total)
         self._logger.debug(
             f"syncing repository {self.url}",
         )
         # future code for loading from cache goes here, idea is load from cache then return immediately
         _ = cache
         # future code end
-        _synced.append(self.url.strip('/'))
+        _self._synced.append(self.url.strip("/"))
         repo = self._hit(_iter)
         self.repo_id = repo["id"]
         self.patches = repo["patches"]  # required attribute
@@ -76,21 +89,23 @@ class Repository:
 
         # embodiment of pain and suffering
         self._logger.debug(f'there are {len(repo["neighbors"])} neighbor(s) for {self.url}')
+        neighbors = []
         for neighbor in repo["neighbors"]:
-            neighbor = neighbor.strip('/')
-            self._logger.debug('_synced type: ' + str(type(_synced)))
-            if str(neighbor) in _synced:
+            if neighbor_sync_depth == 0:
+                continue
+            neighbor = neighbor.strip("/")
+            if neighbor in _self._synced:
                 self._logger.debug(f"neighbor {neighbor} already added, not adding again")
                 continue
-            _synced.append(neighbor)
+            neighbors.append(neighbor)
+            _self._total += 1
+
+        for neighbor in neighbors:
+            _self._synced.append(neighbor)
 
             n_repo = Repository(neighbor)
             if neighbor_sync_depth != 0:
-                _iter = n_repo.sync(
-                    neighbor_sync_depth - 1,
-                    _iter=_iter + 1,
-                    _synced=_synced
-                )
+                _iter = n_repo.sync(neighbor_sync_depth - 1, signal=signal, _iter=_iter + 1, _self=_self)
             else:
                 self._logger.debug("neighbor sync depth reached 0, not syncing")
 
