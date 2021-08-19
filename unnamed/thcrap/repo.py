@@ -117,7 +117,7 @@ class Repository:
 
     def _hit(self, iter_c) -> Union[dict, None]:
         logger = self._logger.getChild("http")
-        path = urllib.parse.urljoin(self.url, "repo.js")
+        path = urllib.parse.urljoin(self.url + "/", "repo.js")
         logger.debug(self.url)
         res = requests.get(path)
         try:
