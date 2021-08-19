@@ -35,18 +35,22 @@ class Repository:
         self.neighbors = {None: []}
         self.repo_id = None  # repo_id
         self.patches = {}
-        self.contact = ""
-        self.title = ""
+        self.contact = "unnamed@kcomain.dev"
+        self.title = "Unknown repository"
 
         self._synced = []  # prevent recursive loops
         self._total = 0
         self._logger = _logger.getChild("unnamed_repository")
+
+    def __str__(self):
+        return f""
 
     def sync(
         self,
         neighbor_sync_depth: int = 0,
         cache: bool = True,
         signal=None,
+        fail_signal=None,
         _self=None,
         _iter=0,
     ) -> int:
@@ -55,13 +59,16 @@ class Repository:
 
         :param _self: private
         :param _iter: private
-        :param signal: pyqt/pyside signal
+        :param signal: pyqt/pyside signal emitted on progress update
+        :param fail_signal: pyqt/pyside signal emitted on failure
         :param neighbor_sync_depth: How deep to sync neighbors, 0 to disable, defaults to 0
         :param cache: Whether or not to cache results, defaults to yes
         :return: private
         """
         if not signal:
             signal = type("DummySignal", (), {"emit": lambda _: None})
+        if not fail_signal:
+            fail_signal = type("DummySignal", (), {"emit": lambda _: None})
 
         if not _self:
             _self = self
@@ -74,7 +81,10 @@ class Repository:
         _ = cache
         # future code end
         _self._synced.append(self.url.strip("/"))
-        repo = self._hit(_iter)
+        repo = self._hit(_iter, signal, fail_signal)
+        if repo is None:
+            self._logger.debug("invalid repository? please report")
+            return _iter
         self.repo_id = repo["id"]
         self.patches = repo["patches"]  # required attribute
 
@@ -115,11 +125,16 @@ class Repository:
                 self.neighbors[n_repo.repo_id] = n_repo  # noqa
         return _iter
 
-    def _hit(self, iter_c) -> Union[dict, None]:
+    def _hit(self, iter_c, sig, sigerr) -> Union[dict, None]:
+        _ = sig  # might come in handy later
         logger = self._logger.getChild("http")
         path = urllib.parse.urljoin(self.url + "/", "repo.js")
         logger.debug(self.url)
-        res = requests.get(path)
+        try:
+            res = requests.get(path)
+        except requests.ConnectionError as e:
+            sigerr.emit(f"Connection error: {e}")
+            return None
         try:
             res.raise_for_status()
         except requests.HTTPError:

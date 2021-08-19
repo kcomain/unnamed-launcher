@@ -7,7 +7,10 @@ class ThWorker(QThread):
     """"""
 
     progress = Signal(int, int)
-    finish = Signal()
+    failure = Signal(str)
+    finish = Signal(bool)
+
+    failed = False
 
     def __init__(self, repo: Repository, parent=None, logger=None):
         super().__init__(parent)
@@ -17,8 +20,11 @@ class ThWorker(QThread):
 
     def run(self):
         self.logger.debug("syncing repository")
-        self.repo.sync(2, signal=self.progress)
-        self.finish.emit()
+        self.repo.sync(2, signal=self.progress, fail_signal=self.failure)
+        self.finish.emit(False)
+
+        self.sleep(5)
+        self.finish.emit(True)
 
 
 def update_text(window):
@@ -31,8 +37,24 @@ def update_text(window):
     return i_think_this_might_work
 
 
+def update_failure(window):
+    def staspriaj(message):
+        window.test_thread.failed = True
+        window.funny.setFormat(f"error: {message}")
+        window.funny.setMaximum(100)
+        return
+
+    return staspriaj
+
+
 def finish_update(window):
-    def probably_works_question_mark():
+    def probably_works_question_mark(button_enable):
+        if button_enable:
+            window.thcrap_test.setEnabled(True)
+
+        if window.test_thread.failed:
+            return
+
         window.funny.setFormat("Finished updating.")
         return
 
@@ -46,6 +68,7 @@ def test(window, logger):
     thread = ThWorker(repo_, logger=logger)
     thread.progress.connect(update_text(window))
     thread.finish.connect(finish_update(window))
+    thread.failure.connect(update_failure(window))
     thread.start()
     logger.debug("started worker thread")
     return thread
