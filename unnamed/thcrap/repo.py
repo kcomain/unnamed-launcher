@@ -1,5 +1,5 @@
 import logging
-import os.path
+import urllib.parse
 from json import JSONDecodeError
 from typing import Union
 
@@ -117,7 +117,7 @@ class Repository:
 
     def _hit(self, iter_c) -> Union[dict, None]:
         logger = self._logger.getChild("http")
-        path = os.path.join(self.url, "repo.js")
+        path = urllib.parse.urljoin(self.url, "repo.js")
         logger.debug(self.url)
         res = requests.get(path)
         try:
