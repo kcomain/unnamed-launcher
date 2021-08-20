@@ -21,6 +21,7 @@ git clone https://github.com/kcomain/unnamed-launcher
 # or
 git clone git@github.com:kcomain/unnamed-launcher
 ```
+
 2. install all the required stuff
 ```bash
 poetry install
@@ -32,9 +33,10 @@ source venv/bin/activate # linux
 
 pip install -r requirements.txt
 ```
+
 3. and then do
 ```bash
-python3 -m unnamed
+python3 main.py
 ```
 
 alternatively you can grab executables [here](https://github.com/kcomain/unnamed-launcher/releases/latest)
