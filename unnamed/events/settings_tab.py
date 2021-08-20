@@ -19,7 +19,7 @@
 #  SOFTWARE.
 from PySide6.QtWidgets import QFileDialog
 
-from unnamed.events import BaseEvents
+from . import BaseEvents
 
 
 class SettingInputEvents(BaseEvents):

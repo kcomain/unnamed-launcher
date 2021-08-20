@@ -33,6 +33,7 @@ jobs:
       - name: Build (linux)
         if: ${{ runner.os == 'Linux' }}
         run: |
+          touch unnamed/__release__.py
           poetry run make all build-executable
           echo "ARTIFACT_PATH=unnamed-launcher" >> $GITHUB_ENV
 
@@ -40,6 +41,7 @@ jobs:
         if: ${{ runner.os == 'Windows' }}
         shell: cmd
         run: |
+          touch unnamed/__release__.py
           echo ARTIFACT_PATH=unnamed-launcher.exe >> %GITHUB_ENV%
           ./bin/build-windows.bat
 

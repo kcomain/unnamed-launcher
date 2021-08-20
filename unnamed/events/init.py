@@ -17,36 +17,10 @@
 #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
-from git import InvalidGitRepositoryError
-from git.repo import Repo
+from ..helpers import get_version
+from . import BaseEvents
 
 
-class SemVer:
-    __slots__ = ("major", "minor", "patch", "release", "rev")
-
-    def __init__(self, major, minor, patch, release=None):
-        self.major = major
-        self.minor = minor
-        self.patch = patch
-        try:
-            self.rev = Repo().rev_parse("HEAD")
-        except InvalidGitRepositoryError:
-            self.rev = None
-        except Exception:
-            print("[!] unable to get git reference due to unknown error. it is safe to ignore this message")
-            self.rev = None
-        self.release = release.lower()
-
-    @property
-    def revision(self):
-        return str(self.rev)[:7] if self.rev else ""
-
-    @property
-    def numerical_string(self):
-        return f"{self.major}.{self.minor}.{self.patch}"
-
-    def __str__(self):
-        return f"{self.numerical_string}-{self.release}"
-
-
-VERSION = SemVer(0, 1, 1, "alpha")
+class InitEvents(BaseEvents):
+    def populate_labels(self):
+        self.window.info_version.setText(get_version())

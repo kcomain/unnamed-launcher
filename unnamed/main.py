@@ -24,6 +24,7 @@ import sys
 from PySide6.QtWidgets import QApplication
 
 from unnamed.events import init as events_init
+from unnamed.events.init import InitEvents
 from unnamed.helpers import load_ui
 
 try:
@@ -65,6 +66,8 @@ def app():
 
     # load events
     events_init(qapp, main_window)
+    init_ev = InitEvents(qapp, main_window)
+    init_ev.populate_labels()
 
     main_window.show()
     qapp.exec()

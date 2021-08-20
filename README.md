@@ -87,5 +87,6 @@ please [let me know](mailto:me@kcomain.dev)
 ## todo
 - [hard] cut down the binary size
   - how in miku's name does the linux pyinstaller'd binary get to 250 mb i do not understand
+  - 37 mb for windows is not fine.
 - button box wrapping thing (reimplement flowlayout)
 - linux compatibility (wine, steam proton, etc.)

@@ -25,7 +25,14 @@ from PySide6.QtWidgets import QApplication
 
 
 class BaseEvents:
-    """Base class that event handlers should subclass"""
+    """Base class that event handlers should subclass
+
+    To load an event handler, name a method with ``event_`` as prefix
+
+    example: ``event_version_ui_open``
+
+    do NOT return anything as they will not be processed in any way.
+    """
 
     def __init__(self, app: QApplication, window):
         self.app = app
@@ -42,7 +49,7 @@ class BaseEvents:
                 listeners.append(getattr(self, i))
 
         if len(listeners) == 0:
-            logger.debug("no event listeners found...?")
+            logger.debug("no event listeners found")
 
         for i in listeners:
             try:

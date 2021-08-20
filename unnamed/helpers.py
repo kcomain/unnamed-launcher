@@ -25,6 +25,15 @@ from PySide6.QtCore import QFile
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtWidgets import QWidget
 
+from . import VERSION
+
+try:
+    from . import __release__
+except ImportError:
+    DEVBUILD = True
+else:
+    DEVBUILD = False
+
 logger = logging.getLogger("helpers")
 
 
@@ -46,3 +55,11 @@ def load_ui(name: str) -> QWidget:
     ui = loader.load(ui_file)
     _logger.debug(f"loaded ui file `{name}.ui` successfully")
     return ui
+
+
+def get_version():
+    base = f"v{VERSION.numerical_string} {VERSION.release}"
+    if DEVBUILD:
+        return f'{base} {"git+" + VERSION.revision if VERSION.rev else ""} (dev build)'
+    else:
+        return base

@@ -22,7 +22,7 @@ from typing import Union
 
 from PySide6.QtWidgets import QDialog, QWidget
 
-from ..helpers import load_ui
+from ..helpers import get_version, load_ui
 from . import BaseEvents
 
 
@@ -39,6 +39,7 @@ class ActionBarEvents(BaseEvents):
             logger.debug("about window action called")
             logger.debug("attempting to load about dialog")
             about_ui: Union[QDialog, QWidget] = load_ui("AboutDialog")
+            about_ui.version.setText(get_version())  # noqa
 
             about_ui.exec()
 
