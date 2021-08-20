@@ -26,7 +26,7 @@ from ..helpers import load_ui
 from . import BaseEvents
 
 
-class MenuEvents(BaseEvents):
+class ActionBarEvents(BaseEvents):
     def event_menu_quit(self, logger: logging.Logger):
         def action():
             logger.debug("quit action called")

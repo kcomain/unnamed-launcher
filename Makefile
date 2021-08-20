@@ -21,7 +21,7 @@ generate-requirements:
 	poetry export --dev --without-hashes -f requirements.txt > requirements.txt
 
 start:
-	LOGGING=debug python3 -m unnamed
+	LOGGING=debug python3 main.py
 
 build-executable: all
 	pyinstaller  \

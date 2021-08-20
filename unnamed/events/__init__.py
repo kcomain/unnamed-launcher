@@ -18,6 +18,19 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 
-__all__ = ("BaseEvents", "")
+# circular import zz
+from .base import BaseEvents
 
-from unnamed.events.base import BaseEvents
+__all__ = ("BaseEvents",)
+
+from PySide6.QtWidgets import QApplication
+
+from .actionbar import ActionBarEvents
+from .settings_tab import SettingInputEvents
+from .thcrap import ThCrapTest
+
+
+def init(app: QApplication, window):
+    ActionBarEvents(app, window).init()
+    SettingInputEvents(app, window).init()
+    ThCrapTest(app, window).init()
