@@ -17,15 +17,29 @@
 #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
+import logging
+from typing import Union
 
-from PySide6.QtWidgets import QApplication, QDialog, QFileDialog, QWidget
+from PySide6.QtWidgets import QDialog, QWidget
 
-from .events.actionbar import MenuEvents
-from .events.settings_tab import SettingInputEvents
-from .events.thcrap import ThCrapTest
+from ..helpers import load_ui
+from . import BaseEvents
 
 
-def init(app: QApplication, window):
-    MenuEvents(app, window).init()
-    SettingInputEvents(app, window).init()
-    ThCrapTest(app, window).init()
+class MenuEvents(BaseEvents):
+    def event_menu_quit(self, logger: logging.Logger):
+        def action():
+            logger.debug("quit action called")
+            self.app.quit()
+
+        self.window.menu_quit.triggered.connect(action)
+
+    def event_menu_about(self, logger: logging.Logger):
+        def action():
+            logger.debug("about window action called")
+            logger.debug("attempting to load about dialog")
+            about_ui: Union[QDialog, QWidget] = load_ui("AboutDialog")
+
+            about_ui.exec()
+
+        self.window.menu_about.triggered.connect(action)

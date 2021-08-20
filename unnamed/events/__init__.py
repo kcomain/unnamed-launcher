@@ -18,14 +18,6 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 
-from PySide6.QtWidgets import QApplication, QDialog, QFileDialog, QWidget
+__all__ = ("BaseEvents", "")
 
-from .events.actionbar import MenuEvents
-from .events.settings_tab import SettingInputEvents
-from .events.thcrap import ThCrapTest
-
-
-def init(app: QApplication, window):
-    MenuEvents(app, window).init()
-    SettingInputEvents(app, window).init()
-    ThCrapTest(app, window).init()
+from unnamed.events.base import BaseEvents

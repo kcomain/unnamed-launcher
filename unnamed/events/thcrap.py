@@ -17,15 +17,14 @@
 #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
-
-from PySide6.QtWidgets import QApplication, QDialog, QFileDialog, QWidget
-
-from .events.actionbar import MenuEvents
-from .events.settings_tab import SettingInputEvents
-from .events.thcrap import ThCrapTest
+from unnamed.events import BaseEvents
+from unnamed.th_crap import test
 
 
-def init(app: QApplication, window):
-    MenuEvents(app, window).init()
-    SettingInputEvents(app, window).init()
-    ThCrapTest(app, window).init()
+class ThCrapTest(BaseEvents):
+    def event_thcrap_test(self, logger):
+        def action():
+            self.window.thcrap_test.setEnabled(False)
+            self.window.test_thread = test(self.window, logger)
+
+        self.window.thcrap_test.clicked.connect(action)
