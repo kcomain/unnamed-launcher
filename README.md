@@ -70,6 +70,9 @@ pyinstaller --distpath ./build/dist --log-level WARN --noconfirm --onefile \
 bin\build-windows.bat
 ```
 
+## contributing
+see [contributing.md](CONTRIBUTING.md)
+
 # credits
 this project is possible with efforts from the following people:
 - [Widdiful](https://www.widdiful.co.uk) for the original launcher
