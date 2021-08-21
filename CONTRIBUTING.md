@@ -1,5 +1,8 @@
 # Contributing
-you shouldn't but i'm glad you have an interest in doing so.
+you shouldn't.
+
+anyways,
+
 this project contains the following things that you might
 feel disappointed about:
 1. poor ui design
