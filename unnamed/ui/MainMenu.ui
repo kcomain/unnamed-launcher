@@ -668,27 +668,36 @@
                   </item>
                  </layout>
                 </item>
-                <item row="2" column="0" colspan="2">
+                <item row="2" column="0">
+                 <widget class="QLabel" name="thcrap_starting">
+                  <property name="statusTip">
+                   <string>Optional. Enter location of thcrap starting repo (a url that starts with http:// or https://)</string>
+                  </property>
+                  <property name="text">
+                   <string>thcrap starting repo</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>thcrap_starting_text</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLineEdit" name="thcrap_starting_text">
+                  <property name="text">
+                   <string>https://srv.thpatch.net/</string>
+                  </property>
+                  <property name="placeholderText">
+                   <string>URL that starts with http or https...</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0" colspan="2">
                  <widget class="QPushButton" name="thcrap_configure">
                   <property name="statusTip">
                    <string>Configure thcrap with thcrap_configure</string>
                   </property>
                   <property name="text">
                    <string>Configure thcrap</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="0">
-                 <widget class="QLabel" name="thcrap_starting">
-                  <property name="text">
-                   <string>thcrap starting repo</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="1">
-                 <widget class="QLineEdit" name="thcrap_starting_text">
-                  <property name="text">
-                   <string>https://srv.thpatch.net/</string>
                   </property>
                  </widget>
                 </item>
@@ -708,11 +717,22 @@
                </spacer>
               </item>
               <item>
-               <widget class="QPushButton" name="thcrap_test">
-                <property name="text">
-                 <string>Test thcrap (debug only)</string>
-                </property>
-               </widget>
+               <layout class="QHBoxLayout" name="horizontalLayout_6">
+                <item>
+                 <widget class="QPushButton" name="thcrap_test">
+                  <property name="text">
+                   <string>Test thcrap (debug only)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton_2">
+                  <property name="text">
+                   <string>Stats (debug)</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </item>
               <item>
                <widget class="QProgressBar" name="funny">
@@ -722,11 +742,14 @@
                 <property name="value">
                  <number>0</number>
                 </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
                 <property name="invertedAppearance">
                  <bool>false</bool>
                 </property>
                 <property name="format">
-                 <string>Random progress bar</string>
+                 <string>Idle</string>
                 </property>
                </widget>
               </item>
@@ -937,9 +960,6 @@
               <property name="text">
                <string>Version placeholdertext</string>
               </property>
-              <property name="textInteractionFlags">
-               <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
-              </property>
              </widget>
             </item>
            </layout>
@@ -1048,7 +1068,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>23</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_launcher">

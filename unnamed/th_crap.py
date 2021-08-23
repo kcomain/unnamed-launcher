@@ -51,7 +51,7 @@ def update_text(window):
     def i_think_this_might_work(current, total):
         window.funny.setMaximum(total)
         window.funny.setValue(current)
-        window.funny.setFormat(f"Updating repos... [{current}/{total}] %p%")
+        window.thcrap_test.setText(f"Updating repos... [{current}/{total}]")
         return
 
     return i_think_this_might_work
@@ -71,17 +71,19 @@ def finish_update(window):
     def probably_works_question_mark(button_enable):
         if button_enable:
             window.thcrap_test.setEnabled(True)
+            window.thcrap_test.setText("Test thcrap (debug only)")
+        else:
+            window.thcrap_test.setText("Finished updating.")
 
         if window.test_thread.failed:
             return
-
-        window.funny.setFormat("Finished updating.")
         return
 
     return probably_works_question_mark
 
 
 def test(window, logger):
+    window.funny.setFormat("%p%")
     repo = window.thcrap_starting_text.text()
     logger.debug(f"text of starting repo is {repo}")
     repo_ = Repository(repo)

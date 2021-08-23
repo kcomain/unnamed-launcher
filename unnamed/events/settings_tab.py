@@ -17,6 +17,8 @@
 #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
+from PySide6.QtCore import QRegularExpression as QRe
+from PySide6.QtGui import QRegularExpressionValidator as QReValidator
 from PySide6.QtWidgets import QFileDialog
 
 from . import BaseEvents
@@ -52,3 +54,5 @@ class SettingInputEvents(BaseEvents):
             logger.debug("WIP: saving location")
 
         self.window.thcrap_browse.clicked.connect(action)
+
+    # def event_

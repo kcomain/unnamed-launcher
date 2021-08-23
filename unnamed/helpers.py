@@ -30,9 +30,9 @@ from . import VERSION
 try:
     from . import __release__
 except ImportError:
-    DEVBUILD = True
+    DEV_BUILD = True
 else:
-    DEVBUILD = False
+    DEV_BUILD = False
 
 logger = logging.getLogger("helpers")
 
@@ -59,7 +59,7 @@ def load_ui(name: str) -> QWidget:
 
 def get_version():
     base = f"v{VERSION.numerical_string} {VERSION.release}"
-    if DEVBUILD:
+    if DEV_BUILD:
         return f'{base} {"git+" + VERSION.revision if VERSION.rev else ""} (dev build)'
     else:
         return base

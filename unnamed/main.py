@@ -67,7 +67,7 @@ def app():
     # load events
     events_init(qapp, main_window)
     init_ev = InitEvents(qapp, main_window)
-    init_ev.populate_labels()
+    init_ev.run_all()
 
     main_window.show()
     qapp.exec()
