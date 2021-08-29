@@ -1,7 +1,5 @@
 # Contributing
-you shouldn't.
-
-anyways,
+you shouldn't, but you're welcome to do so.
 
 this project contains the following things that you might
 feel disappointed about:

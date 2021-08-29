@@ -958,7 +958,7 @@
                </sizepolicy>
               </property>
               <property name="text">
-               <string>Version placeholdertext</string>
+               <string>fumo</string>
               </property>
              </widget>
             </item>
@@ -977,7 +977,7 @@
              <item>
               <widget class="QLabel" name="label_8">
                <property name="text">
-                <string>Yet another 2hu launcher</string>
+                <string>fumo</string>
                </property>
               </widget>
              </item>

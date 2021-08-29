@@ -140,6 +140,7 @@ cython_debug/
 
 # Editor configuration
 .idea/
+.vscode/
 
 # Qt resources
 resources.py
