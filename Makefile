@@ -20,7 +20,7 @@ release-qm:
 generate-requirements:
 	poetry export --dev --without-hashes -f requirements.txt > requirements.txt
 
-start:
+start: compile-resource build
 	LOGGING=debug python3 main.py
 
 build-executable: all
@@ -35,5 +35,11 @@ build-executable: all
 		--collect-data unnamed \
 		main.py
 
+.PHONY: build
+build:
+	python setup.py build_ext --inplace
+
 clean:
 	rm -vfr build unnamed/resources.py temp dist requirements.txt || true
+	find -name '*.c' -print -delete  # this is a python repo,
+	find -name '*.so' -print -delete

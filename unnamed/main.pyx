@@ -35,12 +35,12 @@ except ImportError:
 
 
 # noinspection SpellCheckingInspection
-def app():
+cdef app():
     # setup logging
-    logger = logging.getLogger("app")
+    cdef object logger = logging.getLogger("app")
 
     # i have no idea what this is used apart from running the actual thing
-    qapp = QApplication(sys.argv)
+    cdef object qapp = QApplication(sys.argv)
     qInitResources()
     logger.debug("initialized resources")
 
@@ -55,6 +55,7 @@ def app():
     #     print(f"unable to load translations. is the resource file compiled or is the qm file empty?")
 
     # load the main window
+    cdef object main_window
     try:
         main_window = load_ui("MainMenu")
     except OSError:
@@ -66,7 +67,7 @@ def app():
 
     # load events
     events_init(qapp, main_window)
-    init_ev = InitEvents(qapp, main_window)
+    cdef object init_ev = InitEvents(qapp, main_window)
     init_ev.run_all()
 
     main_window.show()

@@ -27,6 +27,8 @@ from PySide6.QtWidgets import QWidget
 
 from . import VERSION
 
+
+cdef bint DEV_BUILD
 try:
     from . import __release__
 except ImportError:
@@ -34,10 +36,11 @@ except ImportError:
 else:
     DEV_BUILD = False
 
+cdef object logger
 logger = logging.getLogger("helpers")
 
 
-def load_ui(name: str) -> QWidget:
+cpdef object load_ui(name: str):
     loader = QUiLoader()
     _logger = logger.getChild("load_ui")
 
@@ -57,9 +60,9 @@ def load_ui(name: str) -> QWidget:
     return ui
 
 
-def get_version():
+cpdef str get_version():
     base = f"v{VERSION.numerical_string} {VERSION.release}"
     if DEV_BUILD:
-        return f'{base} {"git+" + VERSION.revision if VERSION.rev else ""} (dev build)'
+        return str(f'{base} {"git+" + VERSION.revision if VERSION.rev != "" else ""} (dev build)')
     else:
-        return base
+        return str(base)

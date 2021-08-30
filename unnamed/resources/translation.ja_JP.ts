@@ -86,7 +86,7 @@
     </message>
     <message>
         <location filename="../ui/MainMenu.ui" line="345"/>
-        <location filename="../ui/MainMenu.ui" line="836"/>
+        <location filename="../ui/MainMenu.ui" line="859"/>
         <source>Fighting games</source>
         <translation type="unfinished"></translation>
     </message>
@@ -98,7 +98,7 @@
     </message>
     <message>
         <location filename="../ui/MainMenu.ui" line="370"/>
-        <location filename="../ui/MainMenu.ui" line="858"/>
+        <location filename="../ui/MainMenu.ui" line="881"/>
         <source>Other games</source>
         <translation type="unfinished"></translation>
     </message>
@@ -114,7 +114,7 @@
     </message>
     <message>
         <location filename="../ui/MainMenu.ui" line="476"/>
-        <location filename="../ui/MainMenu.ui" line="1075"/>
+        <location filename="../ui/MainMenu.ui" line="1095"/>
         <source>Settings</source>
         <translation>設定</translation>
     </message>
@@ -218,123 +218,122 @@
     </message>
     <message>
         <location filename="../ui/MainMenu.ui" line="674"/>
+        <source>Optional. Enter location of thcrap starting repo (a url that starts with http:// or https://)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/MainMenu.ui" line="690"/>
+        <source>URL that starts with http or https...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/MainMenu.ui" line="697"/>
         <source>Configure thcrap with thcrap_configure</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="677"/>
+        <location filename="../ui/MainMenu.ui" line="700"/>
         <source>Configure thcrap</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="684"/>
+        <location filename="../ui/MainMenu.ui" line="677"/>
         <source>thcrap starting repo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="691"/>
+        <location filename="../ui/MainMenu.ui" line="687"/>
         <source>https://srv.thpatch.net/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="713"/>
+        <location filename="../ui/MainMenu.ui" line="724"/>
         <source>Test thcrap (debug only)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="729"/>
-        <source>Random progress bar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/MainMenu.ui" line="742"/>
+        <location filename="../ui/MainMenu.ui" line="765"/>
         <source>Random Games Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="754"/>
+        <location filename="../ui/MainMenu.ui" line="777"/>
         <source>Choose games to be picked when using the random option.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="769"/>
+        <location filename="../ui/MainMenu.ui" line="792"/>
         <source>Select all games to have a chance to be selected when using the random option</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="772"/>
+        <location filename="../ui/MainMenu.ui" line="795"/>
         <source>Select all</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="779"/>
+        <location filename="../ui/MainMenu.ui" line="802"/>
         <source>Select all available games to have a chance to be selected when using the random option</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="782"/>
+        <location filename="../ui/MainMenu.ui" line="805"/>
         <source>Select all available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="802"/>
+        <location filename="../ui/MainMenu.ui" line="825"/>
         <source>Disables the random game option</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="805"/>
+        <location filename="../ui/MainMenu.ui" line="828"/>
         <source>Unselect All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="814"/>
+        <location filename="../ui/MainMenu.ui" line="837"/>
         <source>Main games</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="820"/>
-        <location filename="../ui/MainMenu.ui" line="842"/>
-        <location filename="../ui/MainMenu.ui" line="864"/>
+        <location filename="../ui/MainMenu.ui" line="843"/>
+        <location filename="../ui/MainMenu.ui" line="865"/>
+        <location filename="../ui/MainMenu.ui" line="887"/>
         <source># Work in progress</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="884"/>
+        <location filename="../ui/MainMenu.ui" line="907"/>
         <source>Info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="922"/>
+        <location filename="../ui/MainMenu.ui" line="945"/>
         <source># Unnamed Launcher</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="938"/>
         <source>Version placeholdertext</source>
-        <translation>Version placeholdertext</translation>
+        <translation type="vanished">Version placeholdertext</translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="954"/>
+        <location filename="../ui/MainMenu.ui" line="974"/>
         <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="960"/>
-        <source>Yet another 2hu launcher</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/MainMenu.ui" line="980"/>
+        <location filename="../ui/MainMenu.ui" line="1000"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copyright (C) 2021-present Sophie (kcomain)&lt;/p&gt;&lt;p&gt;MIT License &lt;a href=&quot;https://github.com/kcomain/unnamed-launcher&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Source code&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="1094"/>
+        <location filename="../ui/MainMenu.ui" line="1114"/>
         <source>About this launcher</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="999"/>
+        <location filename="../ui/MainMenu.ui" line="1019"/>
         <source>Credits</source>
         <translation type="unfinished"></translation>
     </message>
@@ -419,42 +418,58 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="1005"/>
+        <location filename="../ui/MainMenu.ui" line="731"/>
+        <source>Stats (debug)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/MainMenu.ui" line="752"/>
+        <source>Idle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/MainMenu.ui" line="961"/>
+        <location filename="../ui/MainMenu.ui" line="980"/>
+        <source>fumo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/MainMenu.ui" line="1025"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www16.big.or.jp/~zun/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Team Shanghai Alice/ZUN&lt;/span&gt;&lt;/a&gt; for the amazing games &lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.widdiful.co.uk/touhou.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Widdiful&lt;/span&gt;&lt;/a&gt; and &lt;a href=&quot;https://github.com/David-JonesDVN/Touhou-Relauncher&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;David-JonesDVN&lt;/span&gt;&lt;/a&gt;: original touhou launchers that this project stole the design of &lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.qt.io&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Qt&lt;/span&gt;&lt;/a&gt; and PySide6: makes this crappy app possible &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="1056"/>
+        <location filename="../ui/MainMenu.ui" line="1076"/>
         <source>Launcher</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="1062"/>
+        <location filename="../ui/MainMenu.ui" line="1082"/>
         <source>Get help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="1065"/>
+        <location filename="../ui/MainMenu.ui" line="1085"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="1080"/>
+        <location filename="../ui/MainMenu.ui" line="1100"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="1083"/>
+        <location filename="../ui/MainMenu.ui" line="1103"/>
         <source>Quit the launcher</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="1086"/>
+        <location filename="../ui/MainMenu.ui" line="1106"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/MainMenu.ui" line="1091"/>
+        <location filename="../ui/MainMenu.ui" line="1111"/>
         <source>About</source>
         <translation>ef</translation>
     </message>

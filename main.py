@@ -36,7 +36,9 @@ logging.debug(f'current log level: {logging.root.level}')
 
 # for some reason pyside _might_ be initializing another logger causing the above code to be as useful as padding
 # sorry pep8
-from unnamed.main import main
+from pyximport import pyximport
+pyximport.install(language_level='3str')
+from unnamed.main import main  # noqa
 
 if __name__ == "__main__":
     main()

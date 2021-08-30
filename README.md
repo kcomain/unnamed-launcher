@@ -2,6 +2,8 @@
 [![wakatime](https://wakatime.com/badge/github/kcomain/unnamed-launcher.svg)](https://wakatime.com/badge/github/kcomain/unnamed-launcher)
 <hr>
 
+# **This is an experimental branch with Cython. You are not looking for this. Go to the Master branch.**
+
 # unnamed-launcher
 
 *note: ultra beta software, expect unstable ui and stuff*

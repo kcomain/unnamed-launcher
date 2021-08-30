@@ -20,6 +20,8 @@
 from git import InvalidGitRepositoryError
 from git.repo import Repo
 
+# import cython
+
 
 class SemVer:
     __slots__ = ("major", "minor", "patch", "release", "rev")
@@ -28,13 +30,14 @@ class SemVer:
         self.major = major
         self.minor = minor
         self.patch = patch
+        self.release = release if release else ""
         try:
             self.rev = Repo().rev_parse("HEAD")
         except InvalidGitRepositoryError:
-            self.rev = None
+            self.rev = ""
         except Exception:
             print("[!] unable to get git reference due to unknown error. it is safe to ignore this message")
-            self.rev = None
+            self.rev = ""
         self.release = release.lower()
 
     @property
