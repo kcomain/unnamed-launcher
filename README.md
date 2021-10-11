@@ -1,4 +1,4 @@
-[![Build executables](https://github.com/kcomain/unnamed-launcher/actions/workflows/build-executable.yml/badge.svg)](https://github.com/kcomain/unnamed-launcher/actions/workflows/build-executable.yml)
+:spineline: [![Build executables](https://github.com/kcomain/unnamed-launcher/actions/workflows/build-executable.yml/badge.svg)](https://github.com/kcomain/unnamed-launcher/actions/workflows/build-executable.yml)
 [![wakatime](https://wakatime.com/badge/github/kcomain/unnamed-launcher.svg)](https://wakatime.com/badge/github/kcomain/unnamed-launcher)
 <hr>
 
@@ -88,8 +88,9 @@ i own only the code for this app, if you're the author of any assets that i've u
 please [let me know](mailto:me@kcomain.dev)
 
 ## todo
-- [hard] cut down the binary size
-  - how in miku's name does the linux pyinstaller'd binary get to 250 mb i do not understand
-  - 37 mb for windows is not fine.
-- button box wrapping thing (reimplement flowlayout)
-- linux compatibility (wine, steam proton, etc.)
+- [ ] screw this rewriting in c++ after i learn it
+- [ ] ~~[hard] cut down the binary size~~
+  - [ ] ~~how in miku's name does the linux pyinstaller'd binary get to 250 mb i do not understand~~
+  - [ ] ~~37 mb for windows is not fine.~~
+- [ ] ~~button box wrapping thing (reimplement flowlayout)~~
+- [ ] ~~:spineline: linux compatibility (wine, steam proton, etc.)~~
